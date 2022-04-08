@@ -17,6 +17,7 @@ const Signup = () => {
         .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/")
         // ...
       }).catch((error) => {
         // Handle Errors here.
@@ -24,6 +25,11 @@ const Signup = () => {
         console.log(errorMessage);
         // ...
     });
+      }
+
+      const handleSignUp = (event) => {
+        event.preventDefault();
+        console.log("Signup successful");
       }
 
 
@@ -54,7 +60,7 @@ const Signup = () => {
               />
             </div>
           </div>
-          <button type='submit' className='auth-form-submit'>
+          <button onClick={handleSignUp} type='submit' className='auth-form-submit'>
             Sign Up
           </button>
         </form>

@@ -17,6 +17,7 @@ const Login = () => {
     .then((result) => {
     const user = result.user;
     console.log(user);
+    navigate("/")
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -57,7 +58,7 @@ const Login = () => {
           <div className='line-right' />
         </div>
         <div className='input-wrapper'>
-          <button className='google-auth'>
+          <button className='google-auth' onClick={googleAuth}>
             <img src={GoogleLogo} alt='' />
             <p className="my-auto"> Continue with Google </p>
           </button>
