@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound/NotFound';
+import Signup from './components/Signup/Signup';
 import Videos from './components/Videos/Videos';
 
 export const BlogContext = createContext()
@@ -26,6 +27,7 @@ function App() {
       <Route path='/videos' element={<Videos />} />
       <Route path='/blog/:key' element={<BlogDetails />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
       <Route path='*' element={<NotFound />}></Route>
     </Routes>
     </BlogContext.Provider>

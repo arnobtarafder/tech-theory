@@ -1,40 +1,41 @@
 import React from "react";
-import "./AuthForm.css";
-import GoogleLogo from "../../Image/google.svg";
 import { useNavigate } from "react-router-dom";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import GoogleLogo from "../../Image/google.svg";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import app from "../../Firebase/Firebase.init";
 import { auth } from "../../Firebase/Firebase.init";
 
 const provider = new GoogleAuthProvider();
 
-
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
-  
-  const googleAuth = () => {
-    signInWithPopup(auth, provider)
-    .then((result) => {
-    const user = result.user;
-    console.log(user);
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorMessage = error.message;
-    console.log(errorMessage);
-    // ...
-});
-  }
+      // const auth = getAuth(app);
+
+      const googleAuth = () => {
+        signInWithPopup(auth, provider)
+        .then((result) => {
+        const user = result.user;
+        console.log(user);
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // ...
+    });
+      }
+
 
   return (
     <div className='auth-form-container '>
       <div className='auth-form'>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <form>
           <div className='input-field'>
             <label htmlFor='email'>Email</label>
             <div className='input-wrapper'>
-              <input type='text' name='email' id='email' />
+              <input type='email' name='email' id='email' />
             </div>
           </div>
           <div className='input-field'>
@@ -43,13 +44,23 @@ const Login = () => {
               <input type='password' name='password' id='password' />
             </div>
           </div>
+          <div className='input-field'>
+            <label htmlFor='confirm-password'>Confirm Password</label>
+            <div className='input-wrapper'>
+              <input
+                type='password'
+                name='confirmPassword'
+                id='confirm-password'
+              />
+            </div>
+          </div>
           <button type='submit' className='auth-form-submit'>
-            Login
+            Sign Up
           </button>
         </form>
         <p className='redirect'>
-          New to Tech Geeks?{" "}
-          <span onClick={() => navigate("/signup")}>Create New Account</span>
+          Already have an account?{" "}
+          <span onClick={() => navigate("/login")}>Login</span>
         </p>
         <div className='horizontal-divider'>
           <div className='line-left' />
@@ -57,7 +68,7 @@ const Login = () => {
           <div className='line-right' />
         </div>
         <div className='input-wrapper'>
-          <button className='google-auth'>
+          <button className='google-auth' onClick={googleAuth}>
             <img src={GoogleLogo} alt='' />
             <p className="my-auto"> Continue with Google </p>
           </button>
@@ -67,4 +78,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
