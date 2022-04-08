@@ -3,5 +3,5 @@
 
 ## API Sources
 
-##### 1. All Blogs Resource  https://retro-tech-talks.herokuapp.com/blogs
+##### 1. All Blogs Resource :  https://retro-tech-talks.herokuapp.com/blogs
 
