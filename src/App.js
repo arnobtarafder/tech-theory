@@ -18,7 +18,7 @@ function App() {
   return (
     // <div className="App">
     <BlogContext.Provider value={[blogs, setBlogs]}>
-    <Navbar></Navbar>
+    <Navbar />
 
     <Routes>
       <Route path='/' element={<Home />} />

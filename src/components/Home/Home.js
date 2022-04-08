@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => {
     // const [blogs, setBlogs] = useState([]);
-    const [blogs, setBlogs] = useContext(BlogContext)
+    const [blogs, setBlogs] = useContext(BlogContext);
 
     useEffect( () => {
         // fetch("https://retro-tech-talks.herokuapp.com/blogs")

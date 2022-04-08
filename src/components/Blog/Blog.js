@@ -1,5 +1,5 @@
 import React from "react";
-import "./Blog.css";
+import './Blog.css';
 // import Indicator from "../../Assets/Image/indicator.svg";
 import { useNavigate } from "react-router-dom";
 
