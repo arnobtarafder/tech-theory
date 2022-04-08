@@ -1,4 +1,10 @@
 .blogs-container {
-    width: 1000px;
-    margin: 0 auto;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 790px) {
+  .blogs-container{
+    /* width: 75%; */
   }
+}

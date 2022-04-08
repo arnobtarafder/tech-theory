@@ -11,9 +11,9 @@ const Navbar = () => {
                 <span>Tech Theory</span>
             </div>
             <div className='link-container'>
-                <NavLink to='/home' className='link'>Home</NavLink>
-                <NavLink to='/videos' className='link'>Videos</NavLink>
-                <NavLink to='/login' className='link'>Login</NavLink>
+                <NavLink to='/home' className={({isActive}) => isActive ? 'active-link': "link"}>Home</NavLink>
+                <NavLink to='/videos' className={({isActive}) => isActive ? 'active-link': "link"}>Videos</NavLink>
+                <NavLink to='/login' className={({isActive}) => isActive ? 'active-link': "link"}>Login</NavLink>
             </div>
         </nav>
     );

@@ -13,7 +13,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div className='blogs-container'>
+        <div className='blogs-container mx-auto'>
             {
             blogs.map((blog, index) => (
                 <Blog key={index} blog={blog} />
